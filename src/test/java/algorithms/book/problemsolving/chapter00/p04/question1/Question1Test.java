@@ -14,9 +14,9 @@ public class Question1Test {
 
         do {
             System.out.println("input number: ");
-            Scanner scanner = new Scanner(System.in);
+            String scannerInput = new Scanner(System.in).next();
 
-            number = Integer.parseInt(scanner.next());
+            number = Integer.parseInt(scannerInput);
             if (number > 0) {
                 question1.enQueue(number);
             }
