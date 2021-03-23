@@ -2,3 +2,5 @@
 .idea
 log
 lib
+*.iml
+algorithms-java.iml
