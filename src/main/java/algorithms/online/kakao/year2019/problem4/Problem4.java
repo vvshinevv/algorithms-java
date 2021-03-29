@@ -1,10 +1,11 @@
 package algorithms.online.kakao.year2019.problem4;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * 후보
@@ -13,7 +14,8 @@ import java.util.stream.Collectors;
 public class Problem4 {
 
     public static void main(String[] args) {
-        System.out.println(new Problem4().solution(
+        Problem4 problem4 = new Problem4();
+        System.out.println(problem4.solution(
                 new String[][]{
                         {"100", "ryan", "music", "2"},
                         {"200", "apeach", "math", "2"},
@@ -25,46 +27,68 @@ public class Problem4 {
         ));
     }
 
-    List<String> set = new ArrayList<>();
+    List<String> sets = new ArrayList<>();
+    List<String> store = new LinkedList<>();
+
     public int solution(String[][] relation) {
-
-        int answer = 0;
-        int len = relation[0].length;
-        powerSet(new int[len], new boolean[len], len, 0);
-        set = set.stream().sorted().collect(Collectors.toList());
-
-        Set<String> valid = new HashSet<>();
-        for (int i = 0 ; i < relation.length ; i++) {
-
+        int[] arr = new int[relation[0].length];
+        for (int i = 0; i< arr.length ; i++) {
+            arr[i] = i;
         }
 
+        bit(arr, relation[0].length);
 
+        for (String set : sets) {
+            Set<String> valid = new HashSet<>();
+            String[] split = set.split(":");
 
-        return answer;
-    }
-
-
-    public void powerSet(int[] arr, boolean[] visited, int n, int idx) {
-        if(idx == n) {
-            set.add(set(arr, visited, n));
-            return;
-        }
-
-        visited[idx] = false;
-        powerSet(arr, visited, n, idx + 1);
-
-        visited[idx] = true;
-        powerSet(arr, visited, n, idx + 1);
-    }
-
-    public String set(int[] arr, boolean[] visited, int n) {
-        StringBuilder set = new StringBuilder();
-        for (int i = 0; i < n; i++) {
-            if (visited[i]) {
-                set.append(arr[i]).append(":");
+            if (split[0].equals("")) {
+                continue;
             }
 
+            for (String[] strings : relation) {
+                StringBuilder value = new StringBuilder();
+                for (String s : split) {
+                    value.append(strings[Integer.parseInt(s)]);
+                }
+                valid.add(value.toString());
+
+            }
+
+            if (valid.size() == relation.length) {
+                store.add(set);
+            }
         }
-        return set.toString();
+
+
+        Set<String> rStore = new HashSet<>(store);
+        for (int i = 0 ; i < store.size(); i++) {
+            String target = store.get(i);
+
+            String[] split = target.split(":");
+
+            for (int j = i + 1; j < store.size(); j++) {
+
+                String[] s = store.get(j).split(":");
+                List<String> a = Arrays.asList(s);
+                if (a.containsAll(Arrays.asList(split))) {
+                    rStore.remove(store.get(j));
+                }
+            }
+        }
+
+        return rStore.size();
+    }
+
+    public void bit(int[] arr, int n) {
+        for (int i = 0; i < 1 << n; i++) {
+            StringBuilder set = new StringBuilder();
+            for (int j = 0; j < n; j++) {
+                if ((i & 1 << j) != 0) {
+                    set.append(arr[j]).append(":");
+                }
+            }
+            sets.add(set.toString());
+        }
     }
 }
