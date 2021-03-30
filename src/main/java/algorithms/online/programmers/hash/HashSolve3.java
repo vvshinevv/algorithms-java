@@ -1,7 +1,11 @@
 package algorithms.online.programmers.hash;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * https://programmers.co.kr/learn/courses/30/lessons/42578
@@ -9,6 +13,8 @@ import java.util.Map;
 public class HashSolve3 {
 
     public static void main(String[] args) {
+
+        HashSolve3 hashSolve3 = new HashSolve3();
         String[][] sample1 = new String[][]{
                 {"yellowhat", "headgear"},
                 {"bluesunglasses", "eyewear"},
@@ -21,54 +27,77 @@ public class HashSolve3 {
                 {"smoky_makeup", "face"}
         };
 
-        System.out.println(solve(sample1));
-        System.out.println(solve(sample2));
+        System.out.println(hashSolve3.solution1(sample1));
+        System.out.println(hashSolve3.solution1(sample2));
     }
 
-    public static int solve(String[][] clothes) {
-        Map<String, Integer> cache = new HashMap<>();
+    public int solution1(String[][] clothes) {
+        Map<String, List<String>> caches = new HashMap<>();
         for (String[] clothe : clothes) {
-            cache.putIfAbsent(clothe[1], 0);
-            int count = cache.get(clothe[1]) + 1;
-            cache.put(clothe[1], count);
-        }
-        int[] count = new int[cache.size()];
-        int i = 0;
-        for (Map.Entry<String, Integer> entry : cache.entrySet()) {
-            count[i] = entry.getValue();
-            i++;
-        }
+            String key = clothe[1];
+            String value = clothe[0];
+            List<String> cache = caches.get(key);
 
-        boolean[] visited = new boolean[cache.size()];
-        int ans = 0;
-        for (int r = 1; r <= count.length; r++) {
-            ans += comb(count, visited, 0, r, 0);
-        }
-
-        return ans;
-    }
-
-    public static int comb(int[] arr, boolean[] visited, int start, int r, int result) {
-        if (r == 0) {
-            return result + calc(arr, visited);
-        }
-
-        for (int i = start; i < arr.length; i++) {
-            visited[i] = true;
-            result = +comb(arr, visited, i + 1, r - 1, result);
-            visited[i] = false;
-        }
-
-        return result;
-    }
-
-    public static int calc(int[] arr, boolean[] visited) {
-        int result = 1;
-        for (int i = 0; i < arr.length; i++) {
-            if (visited[i]) {
-                result *= arr[i];
+            if (cache == null) {
+                cache = new ArrayList<>();
             }
+
+            cache.add(value);
+            caches.put(key, cache);
         }
-        return result;
+
+        int answer = 1;
+        for (Map.Entry<String, List<String>> entry : caches.entrySet()) {
+            int size = entry.getValue().size() + 1;
+            answer *= size;
+        }
+
+        return answer - 1;
+    }
+
+
+    public int solution(String[][] clothes) {
+        List<String> sets = new ArrayList<>();
+        int[] arr = new int[clothes.length];
+        for (int i = 0; i < clothes.length; i++) {
+            arr[i] = i;
+        }
+
+        bit(arr, clothes.length, sets);
+
+        int answer = 0;
+        for (String set : sets) {
+            Set<String> collection = new HashSet<>();
+            String[] splits = set.split(":");
+            int j = 0;
+            for (String split : splits) {
+                if (split.equals("")) {
+                    break;
+                }
+                j++;
+                int idx = Integer.parseInt(split);
+                String value = clothes[idx][1];
+                collection.add(value);
+            }
+
+            if (collection.size() != 0 && collection.size() == j) {
+                answer++;
+            }
+
+        }
+
+        return answer;
+    }
+
+    public void bit(int[] arr, int n, List<String> sets) {
+        for (int i = 0; i < 1 << n; i++) {
+            StringBuilder set = new StringBuilder();
+            for (int j = 0; j < n; j++) {
+                if ((i & 1 << j) != 0) {
+                    set.append(arr[j]).append(":");
+                }
+            }
+            sets.add(set.toString());
+        }
     }
 }
