@@ -2,6 +2,10 @@ package algorithms.online.kakao.year2021.problem1;
 
 import java.util.Locale;
 
+/**
+ * 신규 아이디 추천 (O)
+ * https://programmers.co.kr/learn/courses/30/lessons/72410
+ */
 public class Problem1 {
     public static void main(String[] args) {
         Problem1 problem1 = new Problem1();

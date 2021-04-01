@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * 후보
+ * 후보키 (O)
  * https://programmers.co.kr/learn/courses/30/lessons/42890
  */
 public class Problem4 {

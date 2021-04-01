@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * 문자열 압축
+ * 문자열 압축 (O)
  * https://programmers.co.kr/learn/courses/30/lessons/60057
  */
 public class Problem1 {

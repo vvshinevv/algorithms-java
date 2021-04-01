@@ -8,6 +8,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * 메뉴 리뉴얼 (O)
+ * https://programmers.co.kr/learn/courses/30/lessons/72411
+ */
 public class Problem2 {
     public static void main(String[] args) {
         Problem2 problem2 = new Problem2();
