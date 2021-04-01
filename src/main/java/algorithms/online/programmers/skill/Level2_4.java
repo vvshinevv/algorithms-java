@@ -8,13 +8,13 @@ import java.util.Set;
  * 영어 끝말잇기 (O)
  * https://programmers.co.kr/learn/courses/30/lessons/12981
  */
-public class Level2Third {
+public class Level2_4 {
 
     public static void main(String[] args) {
-        Level2Third level2Third = new Level2Third();
-        System.out.println(Arrays.toString(level2Third.solution(2, new String[]{"hello", "one", "even", "never", "now", "world", "draw"})));
-        System.out.println(Arrays.toString(level2Third.solution(3, new String[]{"tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"})));
-        System.out.println(Arrays.toString(level2Third.solution(5, new String[]{"hello", "observe", "effect", "take", "either", "recognize", "encourage",
+        Level2_4 level24 = new Level2_4();
+        System.out.println(Arrays.toString(level24.solution(2, new String[]{"hello", "one", "even", "never", "now", "world", "draw"})));
+        System.out.println(Arrays.toString(level24.solution(3, new String[]{"tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"})));
+        System.out.println(Arrays.toString(level24.solution(5, new String[]{"hello", "observe", "effect", "take", "either", "recognize", "encourage",
                 "ensure", "establish", "hang", "gather", "refer", "reference", "estimate", "executive"})));
     }
 

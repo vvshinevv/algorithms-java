@@ -6,11 +6,11 @@ import java.util.Arrays;
  * 주식가격 (O)
  * https://programmers.co.kr/learn/courses/30/lessons/42584
  */
-public class Level2Forth {
+public class Level2_2 {
 
     public static void main(String[] args) {
-        Level2Forth level2Forth = new Level2Forth();
-        System.out.println(Arrays.toString(level2Forth.solution(new int[]{1, 2, 3, 2, 3})));
+        Level2_2 level22 = new Level2_2();
+        System.out.println(Arrays.toString(level22.solution(new int[]{1, 2, 3, 2, 3})));
     }
 
     public int[] solution(int[] prices) {

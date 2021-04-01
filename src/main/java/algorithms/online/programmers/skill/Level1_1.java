@@ -1,13 +1,13 @@
 package algorithms.online.programmers.skill;
 
-public class Level1Fir {
+public class Level1_1 {
 
     public static void main(String[] args) {
-        Level1Fir level1Fir = new Level1Fir();
-        System.out.println(level1Fir.solution("a234"));
-        System.out.println(level1Fir.solution("1234"));
-        System.out.println(level1Fir.solution("12123132134134"));
-        System.out.println(level1Fir.solution("12345a"));
+        Level1_1 level11 = new Level1_1();
+        System.out.println(level11.solution("a234"));
+        System.out.println(level11.solution("1234"));
+        System.out.println(level11.solution("12123132134134"));
+        System.out.println(level11.solution("12345a"));
     }
 
     public boolean solution(String s) {

@@ -8,13 +8,13 @@ import java.util.Map;
  * 캐시 (O)
  * https://programmers.co.kr/learn/courses/30/lessons/17680
  */
-public class Level2Fir {
+public class Level2_1 {
 
     public static void main(String[] args) {
-        Level2Fir level2Fir = new Level2Fir();
-        System.out.println(level2Fir.solution(3, new String[]{"Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"}));
-        System.out.println(level2Fir.solution(2, new String[]{"Jeju", "Pangyo", "NewYork", "newyork"}));
-        System.out.println(level2Fir.solution(5, new String[]{"aa", "aa", "aa"}));
+        Level2_1 level21 = new Level2_1();
+        System.out.println(level21.solution(3, new String[]{"Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"}));
+        System.out.println(level21.solution(2, new String[]{"Jeju", "Pangyo", "NewYork", "newyork"}));
+        System.out.println(level21.solution(5, new String[]{"aa", "aa", "aa"}));
     }
 
     public int solution(int cacheSize, String[] cities) {
