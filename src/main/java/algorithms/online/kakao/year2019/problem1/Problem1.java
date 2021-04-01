@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * 무지 먹방 라이
+ * 무지 먹방 라이브 (O)
  * https://programmers.co.kr/learn/courses/30/lessons/42891
  */
 public class Problem1 {

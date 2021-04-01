@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * 실패율
+ * 실패율 (O)
  * https://programmers.co.kr/learn/courses/30/lessons/42889
  */
 public class Problem2 {

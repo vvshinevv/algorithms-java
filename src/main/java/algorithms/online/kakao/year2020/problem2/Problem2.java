@@ -2,6 +2,10 @@ package algorithms.online.kakao.year2020.problem2;
 
 import java.util.Stack;
 
+/**
+ * 괄호 변환 (O)
+ * https://programmers.co.kr/learn/courses/30/lessons/60058
+ */
 public class Problem2 {
 
     public static void main(String[] args) {

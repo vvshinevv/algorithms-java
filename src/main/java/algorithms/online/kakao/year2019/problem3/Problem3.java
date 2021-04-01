@@ -6,6 +6,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 오픈채팅방 (O)
+ * https://programmers.co.kr/learn/courses/30/lessons/42888
+ */
 public class Problem3 {
 
     public static void main(String[] args) {
