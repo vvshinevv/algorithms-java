@@ -8,9 +8,9 @@ import java.util.Locale;
  * Jaden 문자열 (O)
  * https://programmers.co.kr/skill_checks/265950?challenge_id=956
  */
-public class Level2Sec {
+public class Level2_3 {
     public static void main(String[] args) {
-        Level2Sec level2Sec = new Level2Sec();
+        Level2_3 level23 = new Level2_3();
 
         List<String> a = new ArrayList<>();
 
@@ -18,9 +18,9 @@ public class Level2Sec {
         a.add(" fff");
         System.out.println(String.join(" ", a));
 
-        System.out.println(level2Sec.solution("for the last week "));
-        System.out.println(level2Sec.solution("3people unFollowed me"));
-        System.out.println(level2Sec.solution("for the last week"));
+        System.out.println(level23.solution("for the last week "));
+        System.out.println(level23.solution("3people unFollowed me"));
+        System.out.println(level23.solution("for the last week"));
     }
 
     public String solution(String s) {

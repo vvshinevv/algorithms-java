@@ -10,10 +10,10 @@ import java.util.stream.Collectors;
  * 시간 초과됨... -> 링크를 못찾겠음.
  *
  */
-public class Level3Sec {
+public class Level3_2 {
     public static void main(String[] args) {
-        Level3Sec level3Sec = new Level3Sec();
-        System.out.println(Arrays.toString(level3Sec.solution(3, 5)));
+        Level3_2 level32 = new Level3_2();
+        System.out.println(Arrays.toString(level32.solution(3, 5)));
 
     }
 
