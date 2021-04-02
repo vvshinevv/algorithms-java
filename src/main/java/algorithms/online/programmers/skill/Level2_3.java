@@ -6,7 +6,7 @@ import java.util.Locale;
 
 /**
  * Jaden 문자열 (O)
- * https://programmers.co.kr/skill_checks/265950?challenge_id=956
+ * https://programmers.co.kr/learn/courses/30/lessons/12951
  */
 public class Level2_3 {
     public static void main(String[] args) {
