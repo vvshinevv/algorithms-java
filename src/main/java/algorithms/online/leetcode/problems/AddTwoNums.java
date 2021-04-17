@@ -24,18 +24,18 @@ public class AddTwoNums {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
-        Stack<Long> stack1 = new Stack<>();
-        Stack<Long> stack2 = new Stack<>();
+        Stack<Integer> stack1 = new Stack<>();
+        Stack<Integer> stack2 = new Stack<>();
         ListNode next1 = l1;
 
         do {
-            stack1.push((long) next1.val);
+            stack1.push(next1.val);
             next1 = next1.next;
         } while (next1 != null);
 
         ListNode next2 = l2;
         do {
-            stack2.push((long) next2.val);
+            stack2.push(next2.val);
             next2 = next2.next;
         } while (next2 != null);
 
