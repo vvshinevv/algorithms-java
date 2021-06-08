@@ -6,8 +6,6 @@ package algorithms.online.programmers.practice;
  */
 public class P_12899 {
 
-
-
     public static void main(String[] args) {
         P_12899 p_12899 = new P_12899();
         System.out.println(p_12899.solution(1)); // 1
