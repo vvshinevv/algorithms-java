@@ -7,8 +7,11 @@ package algorithms.online.programmers.practice;
 public class P_43165 {
 
     public static void main(String[] args) {
-        P_43165 p_43165 = new P_43165();
-        p_43165.solution(new int[]{1, 1, 1, 1, 1}, 3); // 5
+
+
+        System.out.println(Integer.bitCount(3));
+//        P_43165 p_43165 = new P_43165();
+//        p_43165.solution(new int[]{1, 1, 1, 1, 1}, 3); // 5
     }
 
     public int solution(int[] numbers, int target) {
