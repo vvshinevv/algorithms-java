@@ -27,7 +27,7 @@ public class HashSolve3 {
                 {"smoky_makeup", "face"}
         };
 
-        System.out.println(hashSolve3.solution1(sample1));
+        System.out.println(hashSolve3.solution(sample1));
         System.out.println(hashSolve3.solution1(sample2));
     }
 

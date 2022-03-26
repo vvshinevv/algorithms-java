@@ -1,7 +1,5 @@
 package algorithms.online.programmers.practice;
 
-import com.sun.tools.javac.util.StringUtils;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
